@@ -20,8 +20,8 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     yield orm.getMigrator().up();
     const post = orm.em.create(Post_1.Post, { title: 'my first post', createdAt: '2023-08-18T14:40:32.823Z', updatedAt: '2023-08-18T14:40:32.823Z' });
     yield orm.em.persistAndFlush(post);
-    console.log("-------sql2------");
-    yield orm.em.nativeInsert(Post_1.Post, { title: 'my first post', createdAt: '2023-08-18T14:40:32.823Z', updatedAt: '2023-08-18T14:40:32.823Z' });
+    const posts = yield orm.em.find(Post_1.Post, {});
+    console.log(posts);
 });
 main().catch(error => {
     console.log(error);

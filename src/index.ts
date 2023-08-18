@@ -8,8 +8,8 @@ const main = async () => {
     await orm.getMigrator().up()
     const post = orm.em.create(Post, {title : 'my first post', createdAt: '2023-08-18T14:40:32.823Z', updatedAt: '2023-08-18T14:40:32.823Z'});
     await orm.em.persistAndFlush(post);
-    console.log("-------sql2------");
-    await orm.em.nativeInsert(Post, {title : 'my first post', createdAt: '2023-08-18T14:40:32.823Z', updatedAt: '2023-08-18T14:40:32.823Z'});
+    const posts = await orm.em.find(Post, {});
+    console.log(posts);
 }
 
 main().catch(error => {
