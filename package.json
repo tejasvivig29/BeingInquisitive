@@ -4,15 +4,34 @@
   "description": "BeingInquisitive is a discussion forum created using NodeJs, ReactJs, Typescript, GraphQL, PostgreSQL",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "watch": "tsc -w",
+    "dev": "nodemon dist/index.js",
+    "start": "node dist/index.js",
+    "start2": "ts-node src/index.ts",
+    "dev2": "nodemon --exec ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "-": "^0.0.1",
+    "@mikro-orm/cli": "^5.7.14",
+    "@mikro-orm/core": "^5.7.14",
+    "@mikro-orm/migrations": "^5.7.14",
+    "@mikro-orm/postgresql": "^5.7.14",
     "@types/node": "^20.5.0",
     "D": "^1.0.0",
+    "pg": "^8.11.3",
     "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/mikro-orm.config.ts",
+      "./dist/mikro-orm.config.js"
+    ]
   }
 }
