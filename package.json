@@ -1,0 +1,18 @@
+{
+  "name": "beinginquisitive",
+  "version": "1.0.0",
+  "description": "BeingInquisitive is a discussion forum created using NodeJs, ReactJs, Typescript, GraphQL, PostgreSQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "-": "^0.0.1",
+    "@types/node": "^20.5.0",
+    "D": "^1.0.0",
+    "typescript": "^5.1.6"
+  }
+}
